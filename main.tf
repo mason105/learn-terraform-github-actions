@@ -15,7 +15,7 @@ terraform {
     organization = "mason105"
 
     workspaces {
-      name = "gh-actions-demo"
+      name = "github-test"
     }
   }
 }
