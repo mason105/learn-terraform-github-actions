@@ -56,7 +56,7 @@ resource "alicloud_security_group" "hkgw_sg" {
 
 resource "alicloud_key_pair" "publickey" {
   key_name   = "my_public_key"
-  public_key = file("~/.ssh/id_rsa.pub")
+  public_key = file("./key.pub")
 }
 
 resource "alicloud_security_group_rule" "allow_all_tcp" {
