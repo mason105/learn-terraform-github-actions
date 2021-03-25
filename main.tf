@@ -96,6 +96,7 @@ data "template_cloudinit_config" "config" {
 }
 
 resource "alicloud_instance" "instance" {
+  region          = var.region
   count           = var.number
   instance_name   = "${var.short_name}-${var.role}-${format(var.count_format, count.index + 1)}"
   host_name       = "${var.short_name}-${var.role}-${format(var.count_format, count.index + 1)}"

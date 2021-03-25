@@ -2,6 +2,10 @@ variable "number" {
   default = "1"
 }
 
+variable "region" {
+  default = "ap-southeast-1"
+}
+
 variable "count_format" {
   default = "%02d"
 }
