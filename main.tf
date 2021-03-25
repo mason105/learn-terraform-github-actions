@@ -50,6 +50,7 @@ resource "alicloud_vpc" "hkgw" {
 }
 
 resource "alicloud_vswitch" "hkgwsw" {
+  region            = var.region
   vpc_id            = alicloud_vpc.hkgw.id
   cidr_block        = "192.168.1.0/24"
   availability_zone = data.alicloud_zones.zones_ds.zones.0.id
@@ -96,7 +97,6 @@ data "template_cloudinit_config" "config" {
 }
 
 resource "alicloud_instance" "instance" {
-  region          = var.region
   count           = var.number
   instance_name   = "${var.short_name}-${var.role}-${format(var.count_format, count.index + 1)}"
   host_name       = "${var.short_name}-${var.role}-${format(var.count_format, count.index + 1)}"
