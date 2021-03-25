@@ -8,7 +8,8 @@ terraform {
       source  = "hashicorp/random"
       version = "3.0.1"
     }
-    provider "alicloud" {
+    alicloud = {
+      source = "aliyun/alicloud"
       region = "ap-southeast-1"
     }
   }
