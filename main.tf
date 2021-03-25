@@ -9,11 +9,11 @@ terraform {
       version = "3.0.1"
     }
     alicloud = {
-      source = "aliyun/alicloud"
-      region = "ap-southeast-1"
+      source  = "aliyun/alicloud"
+      version = "1.119.0"
     }
   }
-  required_version = "~> 0.13"
+  required_version = "~> 0.14"
 
   backend "remote" {
     organization = "mason105"
@@ -24,7 +24,9 @@ terraform {
   }
 }
 
-
+provider "alicloud" {
+  region = "ap-southeast-1"
+}
 data "alicloud_images" "default" {
   most_recent = true
   owners      = "system"
