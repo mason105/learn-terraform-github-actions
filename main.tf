@@ -23,7 +23,7 @@ provider "alicloud" {
   region = "ap-southeast-1"
 }
 
-provider "aws"{
+provider "aws" {
   regin = "us-east-1"
 }
 data "alicloud_images" "default" {
