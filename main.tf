@@ -22,6 +22,10 @@ terraform {
 provider "alicloud" {
   region = "ap-southeast-1"
 }
+
+provider "aws"{
+  regin = "us-east-1"
+}
 data "alicloud_images" "default" {
   most_recent = true
   owners      = "system"
