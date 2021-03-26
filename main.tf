@@ -10,7 +10,13 @@ terraform {
     }
   }
   required_version = "~> 0.14"
+  backend "remote" {
+    organization = "mason105"
 
+    workspaces {
+      name = "github-test"
+    }
+  }
 }
 
 provider "alicloud" {
