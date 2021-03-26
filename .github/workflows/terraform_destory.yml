@@ -1,4 +1,4 @@
-name: "Terraform"
+name: "Terraform-Destory"
 
 on:
   workflow_dispatch
@@ -26,7 +26,6 @@ jobs:
 
       - name: Terraform Destroy
         id: destroy
-        if: github.event_name == 'pull_request'
         run: terraform destroy -auto-approve
         continue-on-error: true
 
