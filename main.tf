@@ -24,7 +24,7 @@ provider "alicloud" {
 }
 
 provider "aws" {
-  regin = "us-east-1"
+  region = "us-east-1"
 }
 data "alicloud_images" "default" {
   most_recent = true
