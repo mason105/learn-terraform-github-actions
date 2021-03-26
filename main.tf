@@ -1,9 +1,5 @@
 terraform {
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "3.26.0"
-    }
     random = {
       source  = "hashicorp/random"
       version = "3.0.1"
@@ -15,13 +11,6 @@ terraform {
   }
   required_version = "~> 0.14"
 
-  backend "remote" {
-    organization = "mason105"
-
-    workspaces {
-      name = "github-test"
-    }
-  }
 }
 
 provider "alicloud" {
@@ -50,7 +39,6 @@ resource "alicloud_vpc" "hkgw" {
 }
 
 resource "alicloud_vswitch" "hkgwsw" {
-  region            = var.region
   vpc_id            = alicloud_vpc.hkgw.id
   cidr_block        = "192.168.1.0/24"
   availability_zone = data.alicloud_zones.zones_ds.zones.0.id
