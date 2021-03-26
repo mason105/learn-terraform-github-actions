@@ -59,8 +59,11 @@ resource "alicloud_security_group" "hkgw_sg" {
   vpc_id = alicloud_vpc.hkgw.id
 }
 
+resource "random_pet" "keyname" {
+  prefix = "public_key_sunit"
+}
 resource "alicloud_key_pair" "publickey" {
-  key_name   = "my_public_key"
+  key_name   = random_pet.keyname.id
   public_key = file("./pub.key")
 }
 
